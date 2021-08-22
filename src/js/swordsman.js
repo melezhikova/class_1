@@ -1,6 +1,7 @@
 import Character from './basic';
 
-class Swordsman extends Character {}
-
-const swordsman = new Swordsman();
-console.log(swordsman);
+class Swordsman extends Character {
+  constructor(name, input) {
+    super(name, input);
+  }
+}

@@ -1,6 +1,7 @@
 import Character from './basic';
 
-class Magician extends Character {}
-
-const magician = new Magician();
-console.log(magician);
+class Magician extends Character {
+  constructor(name, input) {
+    super(name, input);
+  }
+}

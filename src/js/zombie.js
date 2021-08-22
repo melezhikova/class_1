@@ -1,6 +1,7 @@
 import Character from './basic';
 
-class Zombie extends Character {}
-
-const zombie = new Zombie();
-console.log(zombie);
+class Zombie extends Character {
+  constructor(name, input) {
+    super(name, input);
+  }
+}
