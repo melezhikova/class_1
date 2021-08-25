@@ -1,37 +1,15 @@
-const types = ['Bowerman', 'Undead', 'Swordsman', 'Zombie', 'Magician', 'Daemon'];
-
 export default class Character {
-  constructor(name, type) {
+  constructor(name) {
     if (name.length > 1 && name.length < 11) {
       this.name = name;
     } else {
       throw new Error('Длина имени должна быть от 2 до 10 символов');
     }
-    if (!types.includes(type)) {
-      throw new Error('Такого персонажа не существует');
-    } else {
-      switch (type) {
-        case 'Bowerman':
-        case 'Undead':
-          this.attack = 25;
-          this.defence = 25;
-          break;
-        case 'Swordsman':
-        case 'Zombie':
-          this.attack = 40;
-          this.defence = 10;
-          break;
-        case 'Magician':
-        case 'Daemon':
-          this.attack = 10;
-          this.defence = 40;
-          break;
-        default:
-          this.type = type;
-      }
-    }
     this.health = 100;
     this.level = 1;
+
+    this.defence = 10;
+    this.attack = 10;
   }
 
   levelUp() {
