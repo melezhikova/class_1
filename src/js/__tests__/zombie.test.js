@@ -1,7 +1,7 @@
 import Zombie from '../zombie';
 
 test('should create new Zombie', () => {
-  const received = new Zombie('Kitty');
+  const received = new Zombie('Kitty', 'Zombie');
   const expected = {
     name: 'Kitty',
     type: 'Zombie',

@@ -1,41 +1,30 @@
 import Character from '../basic';
 
 test('should create new Character', () => {
-  const received = new Character('Eva');
+  const received = new Character('Eva', 'Zombie');
+
   const expected = {
     name: 'Eva',
+    type: 'Zombie',
     health: 100,
     level: 1,
-    defence: 10,
-    attack: 10,
   };
   expect(received).toEqual(expected);
 });
 
-test('should get level up', () => {
-  const input = new Character('Eva');
-  const received = input.levelUp();
-  const expected = {
-    name: 'Eva',
-    attack: 12,
-    defence: 12,
-    health: 100,
-    level: 2,
-  };
+test('should get error when create new Character_name', () => {
+  function create () {
+    const eva = new Character('Evaaaaaaaaa', 'Zombie');
+  }
 
-  expect(received).toEqual(expected);
+  expect(create).toThrowError('Длина имени должна быть от 2 до 10 символов');
 });
 
-test('should get damage', () => {
-  const input = new Character('Eva');
-  const received = input.damage(5);
-  const expected = {
-    name: 'Eva',
-    attack: 10,
-    defence: 10,
-    health: 95.5,
-    level: 1,
-  };
+test('should get error when create new Character_type', () => {
+  function create () {
+    const eva = new Character('Eva', 'Zombieee');
+  }
 
-  expect(received).toEqual(expected);
+  expect(create).toThrowError('Такого персонажа не существует');
 });
+

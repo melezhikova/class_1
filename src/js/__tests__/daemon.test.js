@@ -1,7 +1,7 @@
 import Daemon from '../daemon';
 
 test('should create new Daemon', () => {
-  const received = new Daemon('Winter');
+  const received = new Daemon('Winter', 'Daemon');
   const expected = {
     name: 'Winter',
     type: 'Daemon',

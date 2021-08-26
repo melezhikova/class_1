@@ -1,7 +1,7 @@
 import Swordsman from '../swordsman';
 
 test('should create new Swordsman', () => {
-  const received = new Swordsman('Spring');
+  const received = new Swordsman('Spring', 'Swordsman');
   const expected = {
     name: 'Spring',
     type: 'Swordsman',
