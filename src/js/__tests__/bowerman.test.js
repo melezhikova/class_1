@@ -14,7 +14,7 @@ test('should create new Bowerman', () => {
 });
 
 test('should get level up', () => {
-  const bowerman = new Bowerman ('Eva', 'Bowerman');
+  const bowerman = new Bowerman('Eva', 'Bowerman');
   bowerman.health = 80;
   bowerman.levelUp();
 
@@ -31,7 +31,7 @@ test('should get level up', () => {
 });
 
 test('should get damage', () => {
-  const bowerman = new Bowerman ('Eva', 'Bowerman');
+  const bowerman = new Bowerman('Eva', 'Bowerman');
   bowerman.damage(5);
 
   const expected = {
@@ -47,22 +47,22 @@ test('should get damage', () => {
 });
 
 test('should get error when try to levelUp', () => {
-  function levelUpBowerman () {
-    const bowerman = new Bowerman ('Eva', 'Bowerman');
+  function levelUpBowerman() {
+    const bowerman = new Bowerman('Eva', 'Bowerman');
     bowerman.health = 0;
     bowerman.levelUp();
   }
-  
+
   expect(levelUpBowerman).toThrowError('Нельзя повысить левел умершего');
 });
 
 test('damage doesnot work when healt = 0', () => {
-  const bowerman = new Bowerman ('Eva', 'Bowerman');
+  const bowerman = new Bowerman('Eva', 'Bowerman');
   bowerman.health = 5;
   bowerman.damage(30);
-  
+
   const received = bowerman.health;
   const expected = 0;
-  
+
   expect(received).toBe(expected);
 });
